@@ -4,6 +4,8 @@ import java.util.Calendar;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +17,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.gpiazzolla.myfirstapp.R;
 
 public class MainActivity extends FragmentActivity{
     private static int timeHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
@@ -82,9 +86,14 @@ public class MainActivity extends FragmentActivity{
         calendar.set(Calendar.SECOND, 0);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
+
     private void cancelAlarm() {
         if (alarmManager!= null) {
             alarmManager.cancel(pendingIntent);
+        }
+        Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM));
+        if(ringtone.isPlaying()) {
+            ringtone.stop();
         }
     }
 }

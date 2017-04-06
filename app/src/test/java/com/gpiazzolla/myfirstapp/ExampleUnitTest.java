@@ -1,4 +1,4 @@
-package com.example.gpiazzolla.myfirstapp;
+package com.gpiazzolla.myfirstapp;
 
 import org.junit.Test;
 

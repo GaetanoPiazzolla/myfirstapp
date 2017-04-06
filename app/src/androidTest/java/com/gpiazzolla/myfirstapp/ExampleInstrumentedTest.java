@@ -1,4 +1,4 @@
-package com.example.gpiazzolla.myfirstapp;
+package com.gpiazzolla.myfirstapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.gpiazzolla.myfirstapp", appContext.getPackageName());
+        assertEquals("com.gpiazzolla.myfirstapp", appContext.getPackageName());
     }
 }
